@@ -39,7 +39,14 @@ public class LogProcessor : MonoBehaviour {
 	private int _audioLog = 0;
 	private int _physicsLog = 0;
 	private int _engineLog = 0;
-
+	private int _loadLog = 0;
+	private int _skeletatMeshLog = 0;
+	private int _spawnTable = 0;
+	private int _networkLog = 0;
+	private int _persistenceLog = 0;
+	private int _handshakeLog = 0;
+	private int _nullObjects = 0;
+	private int _heatmapInfo = 0;
 
 	private int _fileNotFound = 0;
 	private int _objectNotFound = 0;
@@ -109,6 +116,14 @@ public class LogProcessor : MonoBehaviour {
 		_audioLog = 0;
 		_physicsLog = 0;
 		_engineLog = 0;
+		_loadLog = 0;
+		_skeletatMeshLog = 0;
+		_spawnTable = 0;
+		_networkLog = 0;
+		_persistenceLog = 0;
+		_handshakeLog = 0;
+		_nullObjects = 0;
+		_heatmapInfo = 0;
 
 		_fileNotFound = 0;
 		_objectNotFound = 0;
@@ -180,6 +195,14 @@ public class LogProcessor : MonoBehaviour {
 		CreateScrollviewEntry("_audioLog = " + _audioLog + "\n");
 		CreateScrollviewEntry("_physicsLog = " + _physicsLog + "\n");
 		CreateScrollviewEntry("_engineLog = " + _engineLog + "\n");
+		CreateScrollviewEntry("_loadLog = " + _loadLog + "\n");
+		CreateScrollviewEntry("_skeletatMeshLog = " + _skeletatMeshLog + "\n");
+		CreateScrollviewEntry("_spawnTable = " + _spawnTable + "\n");
+		CreateScrollviewEntry("_networkLog = " + _networkLog + "\n");
+		CreateScrollviewEntry("_persistenceLog = " + _persistenceLog + "\n");
+		CreateScrollviewEntry("_handshakeLog = " + _handshakeLog + "\n");
+		CreateScrollviewEntry("_nullObjects = " + _nullObjects + "\n");
+		CreateScrollviewEntry("_heatmapInfo = " + _heatmapInfo + "\n");
 
 		CreateScrollviewEntry("_fileNotFound = " + _fileNotFound + "\n");
 		CreateScrollviewEntry("_objectNotFound = " + _objectNotFound + "\n");
@@ -297,13 +320,13 @@ public class LogProcessor : MonoBehaviour {
 			ProcessNetLog (line);
 		}
 		else if (line.Contains ("LogLoad")) {
-			_processedLines += 1;
+			_loadLog += 1;
 		}
 		else if (line.Contains ("LogSkeletalMesh")) {
-			_processedLines += 1;
+			_skeletatMeshLog += 1;
 		}
 		else if (line.Contains ("SpawnTable")) {
-			_processedLines += 1;
+			_spawnTable += 1;
 		}
 		else if (line.Contains ("GlobalServerChannel")) {
 			_processedLines += 1;
@@ -312,10 +335,10 @@ public class LogProcessor : MonoBehaviour {
 			_processedLines += 1;
 		}
 		else if (line.Contains ("Persistence")) {
-			_processedLines += 1;
+			_persistenceLog += 1;
 		}
 		else if (line.Contains ("Network")) {
-			_processedLines += 1;
+			_networkLog += 1;
 		}
 		else if (line.Contains ("AI")) {
 			ProcessAiLog (line);
@@ -328,13 +351,13 @@ public class LogProcessor : MonoBehaviour {
 			ProcessLoginDisplay (line);
 		}
 		else if (line.Contains ("LogHandshake")) {
-			_processedLines += 1;
+			_handshakeLog += 1;
 		}
 		else if (line.Contains ("NULL object")) {
-			_processedLines += 1;
+			_nullObjects += 1;
 		}
 		else if (line.Contains ("HeatmapMetrics:Display")) {
-			_processedLines += 1;
+			_heatmapInfo += 1;
 		}
 		else if (line.Contains ("Crafting Multiplier set to")) {
 			_processedLines += 1;
