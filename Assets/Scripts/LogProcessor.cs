@@ -327,6 +327,58 @@ public class LogProcessor : MonoBehaviour {
 		else if (line.Contains ("Login:Display")) {
 			ProcessLoginDisplay (line);
 		}
+		else if (line.Contains ("LogHandshake")) {
+			_processedLines += 1;
+		}
+		else if (line.Contains ("NULL object")) {
+			_processedLines += 1;
+		}
+		else if (line.Contains ("HeatmapMetrics:Display")) {
+			_processedLines += 1;
+		}
+		else if (line.Contains ("Crafting Multiplier set to")) {
+			_processedLines += 1;
+		}
+		else if (line.Contains ("Emote_Worship")) {
+			_processedLines += 1;
+		}
+		else if (line.Contains ("URecipeItem - Failed to load BuildingModule")) {
+			_processedLines += 1;
+		}
+		else if (line.Contains ("SpawnActor failed because of collision at the spawn")) {
+			_processedLines += 1;
+		}
+		else if (line.Contains ("LogExternalProfiler")) {
+			_processedLines += 1;
+		}
+		else if (line.Contains ("out of bounds")) {
+			_processedLines += 1;
+		}
+		else if (line.Contains ("History overflow")) {
+			_processedLines += 1;
+		}
+		else if (line.Contains ("LogAnimMontage:Warning")) {
+			_processedLines += 1;
+		}
+		else if (line.Contains ("Building:Warning")) {
+			CreateLogEntry (line);
+		}
+		else if (line.Contains ("LogCharacterMovement")) {
+			CreateLogEntry (line);
+		}
+		else if (line.Contains ("ItemInventory")) {
+			CreateLogEntry (line);
+		}
+		else if (line.Contains ("BaseHumanoidNPC")) {
+			CreateLogEntry (line);
+		}
+		else if (line.Contains ("LogOnline:Display: STEAM:")) {
+			CreateLogEntry (line);
+		}
+		else if (line.Contains ("ChatWindow")) {
+			CreateLogEntry (line);
+		}
+
 		else {
 			_unprocessedLines += 1;
 		}
