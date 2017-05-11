@@ -558,6 +558,7 @@ public class LogProcessor : MonoBehaviour {
 		}
 		else if (line.Contains ("UNetConnection::Close"))
 		{
+			CreateLogEntry (line);
 			_netCleanUp += 1;
 		}
 		else if (line.Contains ("LocalNetworkVersion"))
